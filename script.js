@@ -122,18 +122,18 @@ let personalMovieDB = {
 
 if (personalMovieDB.count < 10) {
     alert('Просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count < 30) {
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
     alert('Вы классический зритель');
-} else if (personalMovieDB.count > 30) {
+} else if (personalMovieDB.count >= 30) {
     alert('Вы киноман');
 } else {
     alert('Произошла ошибка');
 }
 
 for (let i = 0; i < 2; i++) {
-    let qu1 = prompt('Один из последних просмотренных фильмов?'),
-        qu2 = +prompt('На сколько оцените его?');
-    if (qu1 === '' || qu1 === null || qu1.length > 50 || qu2 === '' || qu2 === null) {
+    let qu1 = prompt('Один из последних просмотренных фильмов?', ''),
+        qu2 = +prompt('На сколько оцените его?', '');
+    if (qu1 == '' || qu1 === null || qu1.length > 50 || qu2 == '' || qu2 === null) {
         alert('Ты не можешь оставить пустую строку, нажать отмена или ввести название фильма > 50 символов');
         i--;
     } else {
