@@ -116,11 +116,11 @@ let personalMovieDB = {
     genres: [],
     privat: false,
     start: function () {
-        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', 'Введите цифрами');
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', 'Введите цифрами и без пробела');
 
         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-            alert('')
-            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', 'Введите цифрами');
+            alert('Введите пожалуйста только цифры и без пробела')
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', 'Введите цифрами и без пробела');
         }
     },
     detectPersonalLevel: function () {
@@ -146,14 +146,6 @@ let personalMovieDB = {
             }
         }
     },
-    showMyDB: function () {
-        if (personalMovieDB.privat == false) {
-            alert('База данных не приватна');
-            console.log(personalMovieDB);
-        } else {
-            alert('Доступ к базе данных закрыт');
-        }
-    },
     writeYourGenres: function () {
         for (let i = 1; i <= 3; i++) {
             let genre = prompt(`Ваш любимый жанр под номером ${i}`, "");
@@ -169,10 +161,24 @@ let personalMovieDB = {
         });
     },
     toggleVisibleMyDB: function () {
-        if (personalMovieDB.privat == true) {
+        if (personalMovieDB.privat) {
             personalMovieDB.privat = false;
-        } else if (personalMovieDB.privat == false) {
-            personalMovieDB.privat = true;
+        } else {
+            personalMovieDB = true;
+        }
+    },
+    showMyDB: function (hidden) {
+        if (hidden) {
+            alert('База данных приватна, вам её не взломать ха, ха, ха, ха!!!!!!!');
+        } else {
+            alert('Доступ к базе данных открыт, нажмите сочетание клавиш ctrl + shift + I что бы посмотреть её');
+            console.log(personalMovieDB);
         }
     }
 };
+personalMovieDB.start();
+personalMovieDB.detectPersonalLevel();
+personalMovieDB.rememberMyFilms();
+personalMovieDB.writeYourGenres();
+// personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.showMyDB(personalMovieDB.privat);
