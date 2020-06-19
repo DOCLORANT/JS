@@ -1,12 +1,12 @@
 body {
-    background-image: url(./imag/background/abstract-antique-backdrop-background-164005.jpg);
+    background-image: url(./img/background/abstract-antique-backdrop-background-164005.jpg);
     background-size: cover;
     margin: 0;
     box-sizing: border-box;
     background-color: rgb(206, 179, 89);
 }
 
-h3 {
+h1 {
     background-color: rgba(252, 185, 2, 0.5);
     border-radius: 30%;
 }

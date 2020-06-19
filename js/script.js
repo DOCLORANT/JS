@@ -164,7 +164,7 @@ let personalMovieDB = {
         if (personalMovieDB.privat) {
             personalMovieDB.privat = false;
         } else {
-            personalMovieDB = true;
+            personalMovieDB.privat = true;
         }
     },
     showMyDB: function (hidden) {
@@ -180,5 +180,5 @@ personalMovieDB.start();
 personalMovieDB.detectPersonalLevel();
 personalMovieDB.rememberMyFilms();
 personalMovieDB.writeYourGenres();
-// personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.showMyDB(personalMovieDB.privat);
